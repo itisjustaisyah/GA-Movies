@@ -4,8 +4,8 @@
 <head>
 
     <title>Registration</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" ></script>
+    <link href="styleSheets/https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script href="styleSheets/https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" ></script>
     <link rel="stylesheet" href="styleSheets/style.css" type="text/css">
 </head>
 <body>
@@ -16,8 +16,8 @@
             <legend>Personal Information</legend>
 
             <div class="form-group">
-                <label class="col-md-4" for="username">Username</label>
-                <div class="col-md-4">
+                <label class="col-md-4 " for="username">Username</label>
+                <div class="col-md-4 col">
                     <input id="username" name="username" type="text" placeholder="Enter your username" class="form-control input-md" required="">
 
                 </div>
