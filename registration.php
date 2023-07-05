@@ -4,18 +4,18 @@
 <head>
 
     <title>Registration</title>
-    <link href="styleSheets/https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <script href="styleSheets/https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" ></script>
+    <link href="styleSheets/http_cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_css_bootstrap.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styleSheets/style.css" type="text/css">
 </head>
-<body>
+<body>s
 <?php include('header.php') ?>
 <div style="padding: 1px; padding: 2%">
     <form>
         <fieldset>
             <legend>Personal Information</legend>
 
-            <div class="form-group">
+            <div class=>
                 <label class="col-md-4 " for="username">Username</label>
                 <div class="col-md-4 col">
                     <input id="username" name="username" type="text" placeholder="Enter your username" class="form-control input-md" required="">
@@ -23,21 +23,21 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div>
                 <label class="col-md-4" for="email">E-mail</label>
                 <div class="col-md-4">
                     <input id="email" name="email" type="email" placeholder="Enter your email" class="form-control input-md" required="">
 
                 </div>
             </div>
-
-            <div class="form-group row row-cols-1 row-cols-md-4 ">
-                <label class="col" for="password">Password</label>
-                <div class="col">
+            <br>
+            <div class="row row-cols-1 row-cols-sm-4 d-flex flex-row justify-content-start">
+                <label class="col-1" for="password">Password</label>
+                <div class=col-sm-2">
                     <input type="password" class="form-control" placeholder="Enter password">
                 </div>
-                <label class="col" for="password">Confirm password</label>
-                <div class="col">
+                <label class="col-sm-1" for="password">Confirm password</label>
+                <div class="col-sm-2">
                     <input type="password" class="form-control" placeholder="Enter password again">
                 </div>
             </div>
@@ -53,7 +53,7 @@
         </fieldset>
 
 
-        <div class="form-group">
+        <div >
             <label class="col-md-4" for="newsletter"></label>
             <div class="col-md-4">
                 <label class="checkbox-inline" for="newsletter-0">
