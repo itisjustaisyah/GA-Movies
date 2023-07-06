@@ -11,57 +11,74 @@
 <body>s
 <?php include('header.php') ?>
 <div style="padding: 1px; padding: 2%">
-    <form>
+    <form class="needs-validation" action="doRegister.php" method="post">
         <fieldset>
-            <legend>Personal Information</legend>
+            <legend>Login</legend>
 
             <div class=>
-                <label class="col-md-4 " for="username">Username</label>
-                <div class="col-md-4 col">
-                    <input id="username" name="username" type="text" placeholder="Enter your username" class="form-control input-md" required="">
+                <label class="col-md-4 form-label" for="username">Name</label>
+                <div class="col-5">
+                    <input id="username" name="username" type="text" placeholder="Enter your username" class="form-control is-invalid" required>
+                    <div class="invalid-feedback">
+                        Please enter your name.
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <label class="col-md-4 form-label" for="DOB">Date Of Birth</label>
+                <div class="col-auto">
+                    <input id="DOB" name="DOB" type="date" class="form-control" required>
 
                 </div>
             </div>
 
             <div>
-                <label class="col-md-4" for="email">E-mail</label>
-                <div class="col-md-4">
-                    <input id="email" name="email" type="email" placeholder="Enter your email" class="form-control input-md" required="">
+                <label class="col-md-4 form-label" for="email">E-mail</label>
+                <div class="col-11">
+                    <input id="email" name="email" type="email" placeholder="Enter your email" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid email
+                    </div>
+                </div>
+            </div>
 
+            <div>
+                <label class="col-md-4 form-label" for="username">Username</label>
+                <div class="col-5">
+                    <input id="username" name="username" type="text" placeholder="Enter your username" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid username
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <label class="col-sm-auto" for="password">Password</label>
+                <div class="col-sm">
+                    <input type="password" class="form-control" placeholder="Enter password" required>
+                    <div class="invalid-feedback">
+                        Enter a valid password
+                    </div>
+                </div>
+                <label class="col-sm-auto" for="password">Confirm password</label>
+                <div class="col-sm">
+                    <input type="password" class="form-control" placeholder="Enter password again" required>
+                    <div class="invalid-feedback">
+                       Password does not match
+                    </div>
                 </div>
             </div>
             <br>
-            <div class="row row-cols-1 row-cols-sm-4 d-flex flex-row justify-content-start">
-                <label class="col-1" for="password">Password</label>
-                <div class=col-sm-2">
-                    <input type="password" class="form-control" placeholder="Enter password">
-                </div>
-                <label class="col-sm-1" for="password">Confirm password</label>
-                <div class="col-sm-2">
-                    <input type="password" class="form-control" placeholder="Enter password again">
-                </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="newsletter">
+                <label class="form-check-label" for="newsletter">Sign up for newsletter to get the latest movie updates</label>
             </div>
 
 
+            <input type="submit" name="Register">
 
-
-
-        </fieldset>
-
-        <fieldset>
-            <legend>Address</legend>
-        </fieldset>
-
-
-        <div >
-            <label class="col-md-4" for="newsletter"></label>
-            <div class="col-md-4">
-                <label class="checkbox-inline" for="newsletter-0">
-                    <input type="checkbox" name="newsletter" id="newsletter-0" value="1">
-                    Sign up for the newsletter
-                </label>
-            </div>
-        </div>
 
     </form>
 </div>

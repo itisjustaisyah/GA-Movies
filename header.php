@@ -15,6 +15,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="registration.php">Register</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="login.php">Login</a>
+                </li>
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
