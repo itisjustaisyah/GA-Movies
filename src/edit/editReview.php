@@ -1,7 +1,6 @@
-<?php?>
 <!DOCTYPE html>
-<include
-<html>
+<?php include('../header.php')?>
+<html>;
 <head>
 
     <title>Edit</title>
@@ -10,6 +9,6 @@
     <link rel="stylesheet" href="styleSheets/style.css" type="text/css">
 </head>
 <body>
-<?php include('header.php') ?>
+<?php include('../header.php') ?>
 <H1>Editing</H1>
 </body>

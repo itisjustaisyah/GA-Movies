@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../styleSheets/style.css" type="text/css">
 </head>
 <body>s
-<?php include('header.php') ?>
+<?php include('../header.php') ?>
 <div style="padding: 1px; padding: 2%">
     <form class="needs-validation" action="../register/doRegister.php" method="post">
         <fieldset>

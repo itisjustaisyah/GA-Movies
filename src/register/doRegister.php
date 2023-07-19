@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../styleSheets/style.css" type="text/css">
 </head>
 <body>
-<?php include('header.php') ?>
+<?php include('../header.php') ?>
  <H1>Registration successful</H1>
 </body>
 

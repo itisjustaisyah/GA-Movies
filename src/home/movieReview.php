@@ -2,12 +2,11 @@
 <include
 <html>
 <head>
-
     <title>Movies</title>
     <link rel="stylesheet" href="styleSheets/style.css" type="text/css">
 </head>
 <body>
-<?php include('header.php') ?>
+<?php include('../header.php') ?>
 
 <div class="table-responsive m-3">
     <table class="table align-middle table-hover">
