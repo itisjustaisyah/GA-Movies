@@ -4,7 +4,7 @@
 <head>
 
     <title>Movies</title>
-    <link rel="stylesheet" href="styleSheets/style.css" type="text/css">
+    <link rel="stylesheet" href="../../styleSheets/style.css" type="text/css">
 </head>
 <body>
 <?php include('header.php') ?>
@@ -16,7 +16,7 @@
             <div>
                 <div class="p-2 bg-secondary">
                     <div class="container">
-                        <a href="movieReview.php"><img class="img-fluid" src="Images/avatar.png"></a>
+                        <a href="movieReview.php"><img class="img-fluid" src="../../Images/avatar.png"></a>
                     </div>
                     <p>
                         <h3>Avatar</h3>
@@ -27,19 +27,19 @@
                         <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<?php echo $i?>" aria-expanded="false" aria-controls="collapseExample<?php echo $i?>">See More</button></p>
                         <div class="collapse" id="collapseExample<?php echo $i?>">
 
-                            <div class="container text-start fle">
+                            <div class="container text-start flex">
                                 <div class="row border-bottom border-dark border-2">
-                                    <div class="col-3">Language:</div>
-                                    <div class="col">English (Sub:Chinese)</div>
+                                    <div class="col-sm-auto"><b>Language:</b></div>
+                                    <div class="col-sm-auto">English (Sub:Chinese)</div>
                                 </div>
                                 <div class="row border-bottom border-dark border-2">
-                                    <div class="col-3">Directed by:</div>
-                                    <div class="col">James Cameron</div>
+                                    <div class="col-sm-auto"><b>Directed by:</b></div>
+                                    <div class="col-sm-auto">James Cameron</div>
                                 </div>
                                 <div class="row border-bottom border-dark border-2">
-                                    <div class="col-3">Featuring:
+                                    <div class="col-sm-auto"><b>Featuring: </b>
                                     </div>
-                                    <div class="col">Sam Worthington, Zoe Saldana, Sigourney Weaver, Kate Winslet, Vin Diesel, Stephen Lang
+                                    <div class="col-sm-auto">Sam Worthington, Zoe Saldana, Sigourney Weaver, Kate Winslet, Vin Diesel, Stephen Lang
                                     </div>
                                 </div>
                                 <div class="row">
