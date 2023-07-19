@@ -1,37 +1,59 @@
 <?php
-include ('../dbfunctions.php');
-for ($i = 0; $i < 11; $i++) {?>
+session_start();
+require('../dbfunctions.php');
+
+$moviesQuery = "
+SELECT *
+FROM movies;";
+
+global $link;
+//$arrMovies[] = getArrofRows($moviesQuery);
+
+foreach ((getArrofRows($moviesQuery)) as $movie) {
+//for ($i = 0; $i < count(getArrofRows($moviesQuery)); $i++) {
+    $id = $movie['movieId'];
+    $title = $movie['movieTitle'];
+    $genre = $movie['movieGenre'];
+    $runtime = $movie['runningTime'];
+    $lang = $movie['language'];
+    $picture = $movie['picture'];
+    $director = $movie['director'];
+    $cast = $movie['cast'];
+    $synopsis = $movie['synopsis'];
+    $reviewLink = "movieReview.php/?id=" . $id;
+    ?>
     <div>
         <div class="p-2 bg-secondary">
             <div class="container">
-                <a href="movieReview.php"><img class="img-fluid" src="../../Images/avatar.png"></a>
+                <a href="<?php echo $reviewLink ?>"><img class="img-fluid" src="../../Images/<?php echo $picture?>"></a>
             </div>
             <p>
-            <h3>Avatar</h3>
-            <i>Action/ Adventure/ Fantasy</i>
-            </p>
+            <h3><?php echo $title?></h3>
+            <i><?php echo $genre?></i>
             <div>
-                <!--                        <button type="button" class="btn btn-primary btn-lg" onclick="location.href = 'seeMore.php';">See More</button>-->
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<?php echo $i?>" aria-expanded="false" aria-controls="collapseExample<?php echo $i?>">See More</button></p>
-                <div class="collapse" id="collapseExample<?php echo $i?>">
-
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapser<?php echo $id?>" aria-expanded="false" aria-controls="collapser<?php echo $id?>">
+                    See More
+                </button>
+                <div class="collapse" id="collapser<?php echo $id?>">
                     <div class="container text-start flex">
+
                         <div class="row border-bottom border-dark border-2">
                             <div class="col-sm-auto"><b>Language:</b></div>
-                            <div class="col-sm-auto">English (Sub:Chinese)</div>
+                            <div class="col-sm-auto"><?php echo $lang?></div>
                         </div>
                         <div class="row border-bottom border-dark border-2">
                             <div class="col-sm-auto"><b>Directed by:</b></div>
-                            <div class="col-sm-auto">James Cameron</div>
+                            <div class="col-sm-auto"><?php echo $director?></div>
                         </div>
                         <div class="row border-bottom border-dark border-2">
                             <div class="col-sm-auto"><b>Featuring: </b>
                             </div>
-                            <div class="col-sm-auto">Sam Worthington, Zoe Saldana, Sigourney Weaver, Kate Winslet, Vin Diesel, Stephen Lang
+                            <div class="col-sm-auto"><?php echo $cast?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col text-center"><p>Set more than a decade after the events of the first film, Avatar: The Way of Water begins to tell the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure</p>
+                            <div class="col text-center"><p><?php echo $synopsis?>
+                                </p>
                             </div>
                         </div>
                     </div>

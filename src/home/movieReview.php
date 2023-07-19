@@ -1,3 +1,24 @@
+<?php
+
+session_start();
+require('../dbfunctions.php');
+$movieId = $_GET['id'];
+$reviewQuery = "
+SELECT *
+FROM users 
+INNER JOIN reviews
+ON users.userId = reviews.userId
+INNER JOIN movies
+ON reviews.movieId = movies.movieId
+;";
+
+
+
+global $link;
+//$arrMovies[] = getArrofRows($moviesQuery);
+?>
+
+
 <!DOCTYPE html>
 <include
 <html>
@@ -6,8 +27,6 @@
     <link rel="stylesheet" href="styleSheets/style.css" type="text/css">
 </head>
 <body>
-<?php include('../header.php') ?>
-
 <div class="table-responsive m-3">
     <table class="table align-middle table-hover">
         <thead class="table-dark">
@@ -16,7 +35,7 @@
             <th scope="col">Name</th>
             <th scope="col">Username</th>
             <th scope="col">Date of review</th>
-            <th scope="col">5</th>
+            <th scope="col">Rating</th>
             <th scope="col"></th>
             <th scope="col"></th>
 
@@ -24,28 +43,33 @@
         </thead>
         <tbody>
         <?php
-        for ($i = 0; $i < 11; $i++) {
+        foreach ((getArrofRows($reviewQuery)) as $review) {
+            if($movieId == $review['movieId']){
+
+            $id = $review['reviewId'];
+            $userId = $review['userId'];
+            $content = $review['review'];
+            $rating = $review['rating'];
+            $datePosted = $review['datePosted'];
+            $username = $review['username'];
+            $name = $review['name'];
             ?>
             <tr>
-                <th scope="row"><?php echo $i ?></th>
-                <td>Mark</td>
-                <td>MarkGuy</td>
-                <td>2023-03-29</td>
-                <td>5</td>
-                <td>Joined in the Avatar bandwagon late but what a spectacle. stunning visual effects</td>
+                <th scope="row"><?php echo $id ?></th>
+                <td><?php echo $name ?></td>
+                <td><?php echo $username ?></td>
+                <td><?php echo $datePosted ?></td>
+                <td><?php echo $rating ?></td>
+                <td><?php echo $content ?></td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <button type="button" class="btn btn-outline-primary" onclick="location.href = 'editReview.php';">Edit</button>
                         <button type="button" class="btn btn-outline-danger" onclick="location.href = 'deleteReview.php';">Delete</button>
                     </div>
                 </td>
-                <!--'Joined in the Avatar bandwagon late but what a spectacle. stunning visual effects', 5, '2023-03-29'),
-                'Heartwarming show, definitely worth a watch', 5, '2023-04-04'),
-                'Best movie ever!', 5, '2023-04-19'),
-                'quite boring.', 2, '2023-04-19'),
-                'Good movie for dog lovers. Puppy is very cute.', 4, '2023-04-19');-->
             </tr>
             <?php
+            }
         }
         ?>
 
