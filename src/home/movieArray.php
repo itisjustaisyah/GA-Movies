@@ -2,14 +2,21 @@
 session_start();
 require('../dbfunctions.php');
 
-$moviesQuery = "
+if (isset($search)){
+    $search = $_GET['search'];
+    $moviesQuery = "
 SELECT *
-FROM movies;";
+FROM movies
+WHERE movieTItle LIKE '%$search%'";
+}else{
+    $moviesQuery = "
+SELECT *
+FROM movies";
+}
 
 global $link;
-//$arrMovies[] = getArrofRows($moviesQuery);
-
-foreach ((getArrofRows($moviesQuery)) as $movie) {
+$arrMovies[] = getArrofRows($moviesQuery);
+foreach ($arrMovies as $movie) {
 //for ($i = 0; $i < count(getArrofRows($moviesQuery)); $i++) {
     $id = $movie['movieId'];
     $title = $movie['movieTitle'];

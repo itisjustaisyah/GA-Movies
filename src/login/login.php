@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../styleSheets/style.css" type="text/css">
 </head>
-<body>s
+<body>
 <?php include('../header.php') ?>
 <div style="padding: 1px; padding: 2%">
     <form class="needs-validation" action="../register/doRegister.php" method="post">

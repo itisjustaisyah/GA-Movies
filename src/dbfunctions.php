@@ -14,12 +14,16 @@ if (!$link) {
 
 function getArrofRows($query){
     global $link;
+    $arrItems[] = [];
     $resultItems = mysqli_query($link, $query) or
     die(mysqli_error($link));
 
-    while($row = mysqli_fetch_assoc($resultItems)){
-        $arrItems[] = $row;
+    if(mysqli_num_rows($resultItems)== 0){
+        while($row = mysqli_fetch_assoc($resultItems)){
+            $arrItems = $row;
+        }
     }
+
 
     mysqli_close($link);
     return $arrItems;

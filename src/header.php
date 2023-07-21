@@ -19,8 +19,19 @@
                     <a class="nav-link active" href="login/login.php">Login</a>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" action="movies.php" method="get">
+                <?php
+                if (!empty($search)){
+                    ?>
+                <input class="form-control me-2" type="search" placeholder="Search here..." aria-label="Search" name="search" value="                <?php echo $search?>">
+
+                <input type="hidden" name="search" value="<?php echo $search?>"/>
+                <?php
+                }else{?>
+                    <input class="form-control me-2" type="search" placeholder="Search here..." aria-label="Search" name="search" value="">
+                    <?php
+                }
+                ?>
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>

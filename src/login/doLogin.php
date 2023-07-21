@@ -10,6 +10,6 @@
     <link rel="stylesheet" href="../../styleSheets/style.css" type="text/css">
 </head>
 <body>
-<?php include('header.php') ?>
+<?php include('../header.php') ?>
 <H1>Login successful</H1>
 </body>
