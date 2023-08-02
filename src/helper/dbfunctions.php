@@ -22,7 +22,7 @@ function getArrofRows($query){
     while($row = mysqli_fetch_array($resultItems)){
         $arrItems[] = $row;
     }
-
+//TODO: fix the arrItems returning null and breaking array
 
     return $arrItems;
 }
