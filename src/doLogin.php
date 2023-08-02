@@ -1,4 +1,44 @@
-<?php?>
+<?php
+session_start();
+$msg = "";
+
+//check whether session variable 'user_id' is set
+//in other words, check whether the user is already logged in
+if (isset($_SESSION['user_id'])) {
+    $msg = "You are already logged in.";
+} else { //user is not logged in
+    //check whether form input 'username' contains value
+    if (isset($_POST['username'])) {
+
+        //retrieve form data
+        $entered_username = $_POST['username'];
+        $entered_password = $_POST['password'];
+
+        //connect to database
+        include ("helper/dbFunctions.php");
+        global $link;
+
+        //match the username and password entered with database record
+        $query = "SELECT userId, username  FROM users 
+                  WHERE username='$entered_usernamze' AND 
+                  password = '$entered_password'";
+        $result = mysqli_query($link, $query) or die(mysqli_error($link));
+
+        //if record is found, store id and username into session
+        if (mysqli_num_rows($result) == 1) {
+            $row = mysqli_fetch_array($result);
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+
+            $msg = "$row";
+//            header("location: movies.php");
+        } else { //record not found
+            $msg = "Sorry, you must enter a valid username 
+                    and password to log in.";
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <include
 <html>

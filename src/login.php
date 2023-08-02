@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<include
+<include xmlns="http://www.w3.org/1999/html"/>
 <html>
 <head>
 
@@ -11,7 +11,7 @@
 <body>
 <?php include('views/header.php') ?>
 <div style="padding: 2%">
-    <form class="needs-validation" action="doRegister.php" method="post">
+    <form class="needs-validation" action="doLogin.php" method="post">
         <fieldset>
             <legend>Login</legend>
 
@@ -24,19 +24,17 @@
                     </div>
                 </div>
 
-                <label class="col-md-4 form-label" for="username">Username</label>
+                <label class="col-md-4 form-label" for="password">Username</label>
                 <div class="col-5">
                 <div class="col-5">
-                    <input type="password" class="form-control" placeholder="Enter password" required>
+                    <input id= "password" name="password" type="password" placeholder="Enter password" class="form-control" required>
                     <div class="invalid-feedback">
                         Please enter password
                     </div>
                 </div>
             </div>
-
-
-
-            <input type="submit" name="Login">
+            <br>
+            <input type="submit" value="Login"></input>
 
 
     </form>

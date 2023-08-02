@@ -6,6 +6,13 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
+
+        <?php
+
+        if(isset($_SESSION['id'])){
+            echo $_SESSION['username'].' ';
+        }
+        ?>
         <a class="navbar-brand nav-link"  style="font-size: x-large" href="movies.php">MoviesReview</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

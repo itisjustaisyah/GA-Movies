@@ -19,12 +19,16 @@ function getArrofRows($query){
     die(mysqli_error($link));
     mysqli_close($link);
 
-    while($row = mysqli_fetch_array($resultItems)){
-        $arrItems[] = $row;
+    if(mysqli_num_rows($resultItems)){
+        while($row = mysqli_fetch_array($resultItems)){
+            $arrItems[] = $row;
+        }
+        return $arrItems;
+    } else{
+        return null;
     }
-//TODO: fix the arrItems returning null and breaking array
 
-    return $arrItems;
+//TODO: fix the arrItems returning null and breaking array
 }
 
 /*function getMovieFromId($id){

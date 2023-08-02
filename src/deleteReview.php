@@ -1,4 +1,4 @@
-<?php?>
+<?php include('views/header.php') ?>
 <!DOCTYPE html>
 <include
 <html>
@@ -10,6 +10,6 @@
     <link rel="stylesheet" href="../styleSheets/style.css" type="text/css">
 </head>
 <body>
-<?php include('views/header.php') ?>
+
 <H1>Deleting</H1>
 </body>

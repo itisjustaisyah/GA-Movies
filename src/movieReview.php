@@ -61,8 +61,8 @@ global $link;
                 <td><?php echo $content ?></td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-outline-primary" onclick="location.href = 'editReview.php';">Edit</button>
-                        <button type="button" class="btn btn-outline-danger" onclick="location.href = 'deleteReview.php';">Delete</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="location.href = '../editReview.php?id=<?php echo $id?>';">Edit</button>
+                        <button type="button" class="btn btn-outline-danger" onclick="location.href = '../deleteReview.php?id=<?php echo $id?>';">Delete</button>
                     </div>
                 </td>
             </tr>

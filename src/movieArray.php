@@ -1,5 +1,4 @@
 <?php
-session_start();
 require('helper/dbfunctions.php');
 
 /*if (isset($search)){
@@ -31,7 +30,7 @@ unset($_GET["search"]);
 global $link;
 $arrMovies[] = getArrofRows($moviesQuery);
 
-if (count($arrMovies) == 0) {
+if ($arrMovies == null ) {
     echo "No matches found";
 }else{
     foreach ($arrMovies[0] as $movie) {
