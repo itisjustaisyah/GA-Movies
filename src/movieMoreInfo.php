@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+
+
+<?php include('views/header.php');
+require('helper/dbfunctions.php');?><!DOCTYPE html>
 <html>
 <head>
 
@@ -6,11 +9,6 @@
     <link rel="stylesheet" href="../styleSheets/style.css" type="text/css">
 </head>
 <body>
-<?php
-session_start();
-include('views/header.php');
-require('helper/dbfunctions.php');
-?>
 
 
 <!--<div style="display: inline-flex; justify-content: center; align-items: center;">

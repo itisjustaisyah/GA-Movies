@@ -4,9 +4,6 @@
 <head>
 
     <title>Registration</title>
-    <link href="http_cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_css_bootstrap.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../styleSheets/style.css" type="text/css">
 </head>
 <body>
 <?php include('views/header.php') ?>
@@ -16,9 +13,9 @@
             <legend>Login</legend>
 
             <div class=>
-                <label class="col-md-4 form-label" for="username">Name</label>
+                <label class="col-md-4 form-label" for="name">Name</label>
                 <div class="col-5">
-                    <input id="username" name="username" type="text" placeholder="Enter your username" class="form-control is-invalid" required>
+                    <input id="name" name="name" type="text" placeholder="Enter your name" class="form-control is-invalid" required>
                     <div class="invalid-feedback">
                         Please enter your name.
                     </div>
@@ -57,17 +54,18 @@
             <div class="row">
                 <label class="col-sm-auto" for="password">Password</label>
                 <div class="col-sm">
-                    <input type="password" class="form-control" placeholder="Enter password" required>
+                    <input id="password" type="password" class="form-control" placeholder="Enter password" required>
                     <div class="invalid-feedback">
                         Enter a valid password
                     </div>
                 </div>
                 <label class="col-sm-auto" for="password">Confirm password</label>
                 <div class="col-sm">
-                    <input type="password" class="form-control" placeholder="Enter password again" required>
+                    <input type="password" id="passwordConfirm"  class="form-control" placeholder="Enter password again" required>
                     <div class="invalid-feedback">
                        Password does not match
                     </div>
+                    <script src="../js/confirmPassword.js"></script>
                 </div>
             </div>
             <br>
@@ -77,7 +75,7 @@
             </div>
 
 
-            <input type="submit" name="Register">
+            <input type="submit" value="Register">
 
 
     </form>

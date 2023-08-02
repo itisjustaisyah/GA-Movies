@@ -1,15 +1,42 @@
-<?php?>
+<?php
+session_start();
+// include a php file that contains the common database connection codes
+require ("helper/dbFunctions.php");
+global $link;
+
+//retrieve computer details from the textarea on the previous page
+$updatedReview = $_POST['review'];
+
+//retrieve id from the hidden form field of the previous page
+$theID = $_POST['id'];
+
+$msg = "";
+
+//build a query to update the table
+//update the record with the details from the form
+$queryUpdate = "UPDATE reviews 
+                SET review='$updatedReview'
+                WHERE reviewId = $theID";
+
+//execute the query
+$resultUpdate = query($queryUpdate);
+
+//if statement to check whether the update is successful
+//store the success or error message into variable $msg
+if ($resultUpdate) {
+    $msg = "Review updated successfully";
+} else {
+    $msg = "Review not updated";
+}
+?>
 <!DOCTYPE html>
-<include
 <html>
 <head>
-
-    <title>Edit</title>
-    <link href="../styleSheets/http_cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_css_bootstrap.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../styleSheets/style.css" type="text/css">
+    <?php include "views/header.php" ?>
+    <title>Edit Review</title>
 </head>
 <body>
-<?php include('views/header.php') ?>
-<H1>Editing</H1>
+<h3>Edit Review</h3>
+<?php echo $msg; ?>
 </body>
+</html>

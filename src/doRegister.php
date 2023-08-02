@@ -1,16 +1,49 @@
-<?php?>
+<?php
+require "helper/dbfunctions.php";
+global $link;
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+$name = $_POST['name'];
+$dob = $_POST['DOB'];
+$email = $_POST['email'];
+
+$queryDupe = "SELECT username
+FROM users
+WHERE username = '$username';";
+
+
+$statusDupe = mysqli_query($link, $queryDupe);
+
+if (mysqli_num_rows($statusDupe) > 0) {
+    $message = "<p>The username $username already exists <br>
+                <a href='login.php'>Try again!</a></p>";
+} else {
+    $queryInsert = "INSERT INTO users (username,password,name,dob,email) 
+          VALUES 
+          ('$name',
+           '$password',
+           '$name',
+           '$dob',
+           '$email')";
+    $statusInsert = mysqli_query($link, $queryInsert);
+    if($statusInsert ){
+        $message = "Your new account has been successfully created. You are now ready to <a href='login.php'>login</a>.";
+    }else{$message = "Account creation unsuccessful :(";}
+
+}
+
+
+mysqli_close($link);
+?>
 <!DOCTYPE html>
 <include
 <html>
 <head>
-
     <title>Registration</title>
-    <link href="../styleSheets/http_cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_css_bootstrap.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../styleSheets/style.css" type="text/css">
+    <?php include "views/header.php"; ?>
 </head>
 <body>
-<?php include('views/header.php') ?>
- <H1>Registration successful</H1>
+ <H1><?php echo $message?></H1>
 </body>
 

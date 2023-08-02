@@ -1,15 +1,51 @@
-<?php include('views/header.php') ?>
+<?php
+require ("helper/dbFunctions.php");
+global $link;
+
+$reviewID = $_GET['reviewId'];
+
+
+$queryReview = "SELECT * FROM reviews
+          WHERE reviewId LIKE '$reviewID'";
+
+$resultItem = query($queryReview);
+
+$rowItem = mysqli_fetch_array($resultItem);
+?>
 <!DOCTYPE html>
 <include
 <html>
 <head>
-
+    <?php include('views/header.php') ?>
     <title>Delete</title>
-    <link href="../styleSheets/http_cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_css_bootstrap.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../styleSheets/style.css" type="text/css">
 </head>
 <body>
+<h3>Delete Review</h3>
+<div class="p-3">
 
-<H1>Deleting</H1>
+        <p><b>Name:</b>
+            <?php echo $rowItem['reviewId'] ?></p>
+
+        <p>
+            <b>UserId:</b>
+            <?php echo $rowItem['userId'] ?>
+        </p>
+
+        <p><b>Date Posted:</b>
+            <?php echo $rowItem['datePosted'] ?></p>
+
+    <p><b>Rating:</b>
+        <?php echo $rowItem['rating'] ?></p>
+
+    <p><i><?php echo $rowItem['review'] ?></i></p>
+
+
+
+
+    <form method="post" action="doEditReview.php">
+        <input type="hidden" name="id" value="<?php echo $rowItem['reviewId'] ?>"/>
+        <p>Are you sure to delete this review?</p>
+        <input type="submit" value="Delete review"/>
+    </form>
+</div>
 </body>

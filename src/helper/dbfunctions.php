@@ -11,13 +11,19 @@ if (!$link) {
     // alternative way to display the error:
     // die(mysqli_connect_error());
 }
+function query($query){
+    global $link;
+    $resultItems = mysqli_query($link, $query) or
+        die(mysqli_error($link));
+    mysqli_close($link);
+    return $resultItems;
+}
 
 function getArrofRows($query){
     global $link;
     $arrItems = null;
-    $resultItems = mysqli_query($link, $query) or
-    die(mysqli_error($link));
-    mysqli_close($link);
+    $resultItems = query($query);
+
 
     if(mysqli_num_rows($resultItems)){
         while($row = mysqli_fetch_array($resultItems)){

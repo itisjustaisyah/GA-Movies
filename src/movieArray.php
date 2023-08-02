@@ -30,7 +30,7 @@ unset($_GET["search"]);
 global $link;
 $arrMovies[] = getArrofRows($moviesQuery);
 
-if ($arrMovies == null ) {
+if ($arrMovies[0] == null ) {
     echo "No matches found";
 }else{
     foreach ($arrMovies[0] as $movie) {
@@ -44,7 +44,7 @@ if ($arrMovies == null ) {
         $director = $movie['director'];
         $cast = $movie['cast'];
         $synopsis = $movie['synopsis'];
-        $reviewLink = "movieMoreInfo.php/?id=" . $id;
+        $reviewLink = "movieMoreInfo.php?movie=" . $id;
         ?>
         <div>
             <div class="p-2 bg-secondary">
@@ -80,11 +80,11 @@ if ($arrMovies == null ) {
                                 <div class="col-sm-auto"><?php echo $cast?>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col text-center"><p><?php echo $synopsis?>
+                            <!--<div class="row">
+                                <div class="col text-center"><p><?php /*echo $synopsis*/?>
                                     </p>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
