@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-require('../dbfunctions.php');
 $movieId = $_GET['id'];
 $reviewQuery = "
 SELECT *
@@ -43,7 +41,7 @@ global $link;
         </thead>
         <tbody>
         <?php
-        foreach ((getArrofRows($reviewQuery)) as $review) {
+        foreach (getArrofRows($reviewQuery) as $review) {
             if($movieId == $review['movieId']){
 
             $id = $review['reviewId'];

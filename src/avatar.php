@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../styleSheets/style.css" type="text/css">
 </head>
 <body>
-<?php include('header.php') ?>
+<?php include('views/header.php') ?>
 
 
 </body>

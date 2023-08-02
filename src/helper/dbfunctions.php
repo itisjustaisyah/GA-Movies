@@ -14,6 +14,7 @@ if (!$link) {
 
 function getArrofRows($query){
     global $link;
+    $arrItems = null;
     $resultItems = mysqli_query($link, $query) or
     die(mysqli_error($link));
     mysqli_close($link);
@@ -22,7 +23,18 @@ function getArrofRows($query){
         $arrItems[] = $row;
     }
 
+
     return $arrItems;
 }
+
+/*function getMovieFromId($id){
+    $moviesQuery = "
+SELECT *
+FROM movies
+WHERE movieId LIKE '$id'";
+    $arrMovies = getArrofRows($moviesQuery);
+    print_r($arrMovies[0]);
+    return $arrMovies[0];
+}*/
 
 global $link;
