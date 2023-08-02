@@ -23,7 +23,7 @@
                 <?php
                 if (!empty($search)){
                     ?>
-                <input class="form-control me-2" type="search" placeholder="Search here..." aria-label="Search" name="search" value="                <?php echo $search?>">
+                <input class="form-control me-2" type="search" placeholder="Search here..." aria-label="Search" name="search" value="<?php echo $search?>">
 
                 <input type="hidden" name="search" value="<?php echo $search?>"/>
                 <?php
